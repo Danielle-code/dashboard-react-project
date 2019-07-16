@@ -37,5 +37,29 @@ Object.assign({c:3,d:4},…a)
 4.x => x*x
  function(x){return x*x} 
 
+5. 跨域问题  
+linkaccount
+1在script-start.js中，端口号 9011
+2在server.js  const ip = '/linkaccount'
+3在setupproxy.js 
+  app.use(proxy('/linkaccount', {
+     target: 'http://10.11.12.188:9011',
+     changeOrigin: true,
+  }))
+
+4在hosts中 127.0.0.1 10.11.12.188
+
+linkpage
+1在script-start.js中，端口号 8090   //端口号设什么亦可
+2在server.js  const ip = '/i'
+3在setupproxy.js 
+  app.use(proxy('/linkaccount', {
+     target: 'http://10.11.12.188:8090',  //必须是
+     changeOrigin: true
+  }))
+
+4在hosts中 127.0.0.1 10.11.12.188    //127.0.0.1 www.linkedme.cc
+
+
 
   

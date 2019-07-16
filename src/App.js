@@ -74,22 +74,25 @@ class App extends Component {
 
   login = () => {
     const params = {
-      email: "yanduo",
-      password: "GAOyanduo1",
-      go_url: '/'
+      email: "demo@linkedme.cc",
+      pwd: "1qaz",
     }
-    axios.post('/cms/login', params).then(res => {
+    // const params = {
+    //   email: "yanduo",
+    //   password: "GAOyanduo1",
+    // }
+    axios.post('/user/login', params).then(res => {
       console.log(res)
-      if (res.header.code === 200) {
-        const go_url = localStorage.getItem('go_url') || '/account'
-        this.props.history.push(go_url)
-        document.cookie = `account_token=${res.body.account_token}`
+      // if (res.ret = undefined) {
+        // const go_url = localStorage.getItem('go_url') || '/account'
+        // this.props.history.push(go_url)
+        // document.cookie = `account_token=${res.body.account_token}`
         // localStorage.setItem('email', this.state.email)
-        localStorage.setItem('go_url', '')
-        localStorage.setItem('isAuthenticated', 1)
-      } else {
-        message.error(res.header.msg)
-      }
+        // localStorage.setItem('go_url', '')
+        // localStorage.setItem('isAuthenticated', 1)
+      // } else {
+      //   message.error(res)
+      // }
     })
   }
   render() {

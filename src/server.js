@@ -5,9 +5,10 @@ import {
 } from 'antd'
 
 // const ip = '/check'
-// const ip = 'http://10.11.12.188:9011'
-const ip = 'https://www.linkedme.cc/dashboard/linkaccount'
+// const ip = 'http://10.11.12.188:9011/linkaccount'
+// const ip = 'https://www.linkedme.cc/dashboard/linkaccount'
 // const ip = '/linkaccount'
+const ip = '/i'
 
 // 超时时间
 axios.defaults.timeout = 30000
